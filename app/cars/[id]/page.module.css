@@ -1,0 +1,15 @@
+.carPage {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	background-color: gainsboro;
+	border-radius: 1rem;
+	padding: 2rem;
+	padding-left: 6rem;
+	font-size: 2rem;
+	position: relative;
+}
+.carPage_arrow {
+	position: absolute;
+	left: 1rem;
+}

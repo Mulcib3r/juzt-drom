@@ -8,9 +8,7 @@ import clsx from "clsx";
 
 const links = [
 	{ name: "Главная", href: "/" },
-	{ name: "Легковые автомобили", href: "/passangers" },
-	{ name: "Фургоны", href: "/vans" },
-	{ name: "Смарт автомобили", href: "/smart" },
+	{ name: "Автомобили", href: "/cars" },
 ];
 
 export default function Navbar() {

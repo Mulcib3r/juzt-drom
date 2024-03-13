@@ -1,0 +1,6 @@
+.rotate {
+	transform: rotate(180deg);
+}
+.arrowOff {
+	pointer-events: none;
+}

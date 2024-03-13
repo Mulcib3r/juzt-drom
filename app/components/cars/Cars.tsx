@@ -2,9 +2,8 @@ import { getCars } from "@/app/services/dromApi";
 import CarCard from "../carCard/carCard";
 import styles from "./cars.module.css";
 
-export default async function Cars() {
-	const vechs = await getCars();
-
+export default async function Cars({ currentPage }: { currentPage: number }) {
+	let vechs = await getCars(currentPage);
 	return (
 		<div className={styles.cars}>
 			{vechs.map((vech) => (
