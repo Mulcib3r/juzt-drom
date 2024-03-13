@@ -1,18 +1,18 @@
 import { getCars } from "@/app/services/dromApi";
 import CarCard from "../carCard/carCard";
+import styles from "./cars.module.css";
 
 export default async function Cars() {
-	const { cars } = await getCars();
+	const vechs = await getCars();
 
 	return (
-		<>
-			{cars.map((car) => (
+		<div className={styles.cars}>
+			{vechs.map((vech) => (
 				<CarCard
-					key={car.make_ID}
-					make={car.make_Name}
-					model={car.model_Name}
+					key={vech.id}
+					vech={vech}
 				/>
 			))}
-		</>
+		</div>
 	);
 }

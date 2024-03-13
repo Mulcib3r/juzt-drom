@@ -5,10 +5,9 @@
 	background-color: gainsboro;
 	border-radius: 1rem;
 	padding: 1rem;
+	flex: 1;
 }
-.carCard:last-child {
-	flex-grow: 1;
-}
+
 .carCard_img {
 	cursor: pointer;
 }
