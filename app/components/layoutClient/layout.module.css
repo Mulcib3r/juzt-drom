@@ -1,0 +1,8 @@
+.layoutClient {
+	flex: 1;
+	padding-top: 3rem;
+}
+.layoutContent {
+	max-width: 1320px;
+	margin: 0 auto;
+}

@@ -1,0 +1,20 @@
+.carCard {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background-color: gainsboro;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+.carCard:last-child {
+	flex-grow: 1;
+}
+.carCard_img {
+	cursor: pointer;
+}
+.carCard_info {
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}

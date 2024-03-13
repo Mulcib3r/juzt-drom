@@ -1,0 +1,24 @@
+.navbar {
+	max-width: 678px;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 auto;
+	height: 100%;
+	align-items: center;
+}
+.navbarLink {
+	display: flex;
+	position: relative;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 18px;
+}
+.navbarLink_active::after {
+	content: "";
+	position: absolute;
+	background-color: black;
+	height: 1px;
+	width: 100%;
+	border-radius: 50%;
+	bottom: -10px;
+}
