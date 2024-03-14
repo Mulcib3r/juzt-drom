@@ -24,6 +24,7 @@ export default async function CarPage({ params }: { params: { id: string } }) {
 			>
 				<ArrowBigLeft size={100} />
 			</Link>
+
 			<div className={styles.carCard_info}>
 				<p>brand: {car.brand}</p>
 				<p>model: {car.model}</p>
@@ -33,7 +34,7 @@ export default async function CarPage({ params }: { params: { id: string } }) {
 				<p>engine: {car.engine}</p>
 				{car.transmission && <p>transmission: {car.transmission}</p>}
 				<p>price: {car.price} RUB</p>
-				{car.range && <p>{car.range}km</p>}
+				{car.range && <p>range: {car.range}km</p>}
 			</div>
 		</div>
 	);

@@ -1,8 +1,9 @@
 import { Suspense } from "react";
-import Cars from "../components/cars/Cars";
+import Cars from "../components/carsWrapper/CarsWrapper";
 import Pagination from "../components/pagination/Pagination";
-import { getCars, getTotalPages } from "../services/dromApi";
+import { getTotalPages } from "../services/dromApi";
 import styles from "./page.module.css";
+import CarsWrapper from "../components/carsWrapper/CarsWrapper";
 
 export default async function CarsPage({
 	searchParams,
@@ -14,7 +15,7 @@ export default async function CarsPage({
 	return (
 		<div className={styles.carsPage}>
 			<Suspense fallback={<div>todo:skeleton</div>}>
-				<Cars currentPage={currentPage} />
+				<CarsWrapper currentPage={currentPage} />
 				<Pagination totalPages={totalPages} />
 			</Suspense>
 		</div>

@@ -13,3 +13,21 @@
 	position: absolute;
 	left: 1rem;
 }
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.carPage_skeleton {
+	min-height: 472px;
+	border-radius: 1rem;
+	background-color: gainsboro;
+	animation: pulse 1s infinite;
+}

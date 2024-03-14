@@ -15,3 +15,19 @@ export const usePagination = () => {
 		createPageURL,
 	};
 };
+
+export const useReverseByCost = () => {
+	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const currentQuery = searchParams.get("query") || "common";
+	const createQuery = (query: string) => {
+		const params = new URLSearchParams(searchParams);
+		params.set("query", query);
+		return `${pathname}?${params}`;
+	};
+
+	return {
+		createQuery,
+		currentQuery,
+	};
+};

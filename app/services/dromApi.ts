@@ -38,3 +38,14 @@ export async function getCarById(id: string) {
 		throw new Error(`Fail with ${error}`);
 	}
 }
+
+export async function deleteCar(id: string) {
+	noStore();
+	try {
+		await axios.delete<Car>(`/cars/${id}`, {
+			baseURL: BASE_URL,
+		});
+	} catch (error) {
+		throw new Error(`Fail with ${error}`);
+	}
+}

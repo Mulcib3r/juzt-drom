@@ -18,9 +18,3 @@
 	display: flex;
 	justify-content: space-around;
 }
-.cars_filter {
-	cursor: pointer;
-}
-.cars_filter:hover {
-	scale: 1.01;
-}

@@ -6,6 +6,10 @@
 	border-radius: 1rem;
 	padding: 1rem;
 	flex: 1;
+	transition: 0.2s;
+}
+.carCard:hover {
+	scale: 1.01;
 }
 
 .carCard_img {
