@@ -2,10 +2,14 @@
 import { Car } from "@/app/models/drom";
 import CarCard from "../carCard/carCard";
 import styles from "./cars.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown01, ArrowUp10 } from "lucide-react";
 
 export default function Cars({ vechs }: { vechs: Car[] }) {
+	useEffect(() => {
+		setCarsState(vechs);
+	}, [vechs]);
+
 	const [carsState, setCarsState] = useState(vechs);
 
 	const sortedByYearDownToUp = () => {
@@ -20,20 +24,20 @@ export default function Cars({ vechs }: { vechs: Car[] }) {
 		]);
 	};
 
-	return (
+	return carsState.length ? (
 		<div className={styles.cars_content}>
 			<div className={styles.cars_filterContainer}>
 				<div
 					className={styles.cars_filter}
 					onClick={sortedByYearDownToUp}
 				>
-					<ArrowDown01 size={100} />
+					<ArrowDown01 size={50} />
 				</div>
 				<div
 					className={styles.cars_filter}
 					onClick={sortedByYearUpToDown}
 				>
-					<ArrowUp10 size={100} />
+					<ArrowUp10 size={50} />
 				</div>
 			</div>
 			<div className={styles.cars}>
@@ -45,5 +49,7 @@ export default function Cars({ vechs }: { vechs: Car[] }) {
 				))}
 			</div>
 		</div>
+	) : (
+		<div className={styles.not_found}>not found =(</div>
 	);
 }

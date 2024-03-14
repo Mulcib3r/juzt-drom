@@ -1,13 +1,15 @@
 .carCard {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	background-color: gainsboro;
 	border-radius: 1rem;
 	padding: 1rem;
-	flex: 1;
 	transition: 0.2s;
+	flex: 1;
 }
+
 .carCard:hover {
 	scale: 1.01;
 }

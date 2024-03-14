@@ -3,3 +3,23 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.carPage_skeleton {
+	background-color: gainsboro;
+	width: 100%;
+	min-height: 100vh;
+	animation: pulse 1s infinite;
+	border-radius: 1rem;
+}

@@ -1,11 +1,9 @@
 .cars {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	display: flex;
-	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: center;
+	gap: 2rem;
 }
 .cars_content {
 	display: flex;
@@ -14,13 +12,32 @@
 	align-items: center;
 }
 .cars_filterContainer {
-	width: 60%;
+	position: relative;
+	width: 100%;
+	min-height: 50px;
 	display: flex;
 	justify-content: space-around;
 }
 .cars_filter {
+	color: lightslategray;
+	position: absolute;
 	cursor: pointer;
+	right: 3%;
+	top: -115%;
 }
+.cars_filter:first-child {
+	position: absolute;
+	cursor: pointer;
+	right: 10%;
+	top: -115%;
+}
+
 .cars_filter:hover {
 	scale: 1.01;
+}
+.not_found {
+	padding: 2rem;
+	background-color: white;
+	font-size: 32px;
+	text-align: center;
 }

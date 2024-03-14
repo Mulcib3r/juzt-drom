@@ -1,0 +1,16 @@
+.search {
+	width: 100%;
+	min-height: 64px;
+	position: relative;
+	display: flex;
+	flex: 1;
+}
+.search input {
+	width: 100%;
+	font-size: 36px;
+	padding: 0 2rem;
+}
+.search input:focus,
+.search input:hover {
+	outline: none;
+}
