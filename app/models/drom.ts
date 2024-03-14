@@ -1,5 +1,6 @@
 export interface Car {
 	id: number;
+	image?: string;
 	year: string;
 	brand: string;
 	model: string;
@@ -9,4 +10,5 @@ export interface Car {
 	engine: string;
 	transmission: string;
 	range: string;
+	picture?: File;
 }

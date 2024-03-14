@@ -11,12 +11,21 @@ export default async function CarPage({ params }: { params: { id: string } }) {
 	return (
 		<div className={styles.carPage}>
 			<div className={styles.carPage_card}>
-				<Image
-					src="https://www.svgrepo.com/show/332266/car.svg"
-					width="400"
-					height="400"
-					alt="car"
-				/>
+				{!car.image ? (
+					<Image
+						src="https://www.svgrepo.com/show/332266/car.svg"
+						width="200"
+						height="200"
+						alt="car"
+					/>
+				) : (
+					<Image
+						src={car.image}
+						width="200"
+						height="200"
+						alt="car"
+					/>
+				)}
 			</div>
 			<Link
 				href="/cars"

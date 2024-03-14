@@ -8,12 +8,21 @@ export default function CarCard({ vech }: { vech: Car }) {
 		<div className={styles.carCard}>
 			<div className={styles.carCard_img}>
 				<Link href={`cars/${vech.id}`}>
-					<Image
-						src="https://www.svgrepo.com/show/332266/car.svg"
-						width="200"
-						height="200"
-						alt="car"
-					/>
+					{!vech.image ? (
+						<Image
+							src="https://www.svgrepo.com/show/332266/car.svg"
+							width="200"
+							height="200"
+							alt="car"
+						/>
+					) : (
+						<Image
+							src={vech.image}
+							width="200"
+							height="200"
+							alt="car"
+						/>
+					)}
 				</Link>
 			</div>
 			<div className={styles.carCard_info}>
