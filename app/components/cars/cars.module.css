@@ -18,23 +18,7 @@
 	display: flex;
 	justify-content: space-around;
 }
-.cars_filter {
-	color: lightslategray;
-	position: absolute;
-	cursor: pointer;
-	right: 3%;
-	top: -115%;
-}
-.cars_filter:first-child {
-	position: absolute;
-	cursor: pointer;
-	right: 10%;
-	top: -115%;
-}
 
-.cars_filter:hover {
-	scale: 1.01;
-}
 .not_found {
 	padding: 2rem;
 	background-color: white;

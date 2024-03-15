@@ -1,0 +1,21 @@
+.cars_filterUp {
+	color: lightslategray;
+	position: absolute;
+	cursor: pointer;
+	right: 3%;
+	top: -115%;
+	transition: 0.2s;
+}
+.cars_filterDown {
+	color: lightslategray;
+	position: absolute;
+	cursor: pointer;
+	right: 10%;
+	top: -115%;
+	transition: 0.2s;
+}
+
+.cars_filterUp:hover,
+.cars_filterDown:hover {
+	scale: 1.05;
+}

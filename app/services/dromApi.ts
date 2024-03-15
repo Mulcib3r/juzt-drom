@@ -3,11 +3,11 @@ import { Car } from "../models/drom";
 import { unstable_noStore as noStore } from "next/cache";
 export const BASE_URL = "http://localhost:3333";
 
-export async function getCars(page: number, query: string) {
+export async function getCars(page: number, query: string, sort: string) {
 	noStore();
 	try {
 		const response = await axios.get<Car[]>(
-			`/cars?page=${page}&limit=10&keyword=${query}`,
+			`/cars?page=${page}&limit=10&keyword=${query}&sort=${sort}`,
 			{
 				baseURL: BASE_URL,
 			}

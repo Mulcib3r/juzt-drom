@@ -2,12 +2,10 @@
 
 import { ChangeEvent, useState } from "react";
 import styles from "./newCarForm.module.css";
-import { useForm } from "react-hook-form";
 import { addNewCar } from "@/app/lib/actions";
 
 const CarForm = () => {
 	const [engine, setEngine] = useState("gas");
-	const { register } = useForm();
 
 	const handleEngineChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		setEngine(e.target.value);
@@ -24,7 +22,7 @@ const CarForm = () => {
 					type="text"
 					id="year"
 					required
-					{...register("year")}
+					name="year"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -33,7 +31,7 @@ const CarForm = () => {
 					type="text"
 					id="brand"
 					required
-					{...register("brand")}
+					name="brand"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -42,7 +40,7 @@ const CarForm = () => {
 					type="text"
 					id="model"
 					required
-					{...register("model")}
+					name="model"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -51,7 +49,7 @@ const CarForm = () => {
 					type="text"
 					id="body"
 					required
-					{...register("body")}
+					name="body"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -60,7 +58,7 @@ const CarForm = () => {
 					type="text"
 					id="color"
 					required
-					{...register("color")}
+					name="color"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -69,7 +67,7 @@ const CarForm = () => {
 					type="text"
 					id="price"
 					required
-					{...register("price")}
+					name="price"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -77,7 +75,7 @@ const CarForm = () => {
 				<select
 					id="engine"
 					required
-					{...register("engine")}
+					name="engine"
 					onChange={handleEngineChange}
 				>
 					<option value="gas">Gas</option>
@@ -90,7 +88,7 @@ const CarForm = () => {
 					<select
 						id="transmission"
 						required
-						{...register("transmission")}
+						name="transmission"
 					>
 						<option value="manual">Manual</option>
 						<option value="automatic">Automatic</option>
@@ -104,7 +102,7 @@ const CarForm = () => {
 						required
 						type="text"
 						id="range"
-						{...register("range")}
+						name="range"
 					/>
 				</div>
 			)}
