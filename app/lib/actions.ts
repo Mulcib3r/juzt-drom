@@ -1,26 +1,29 @@
 "use server";
 import axios from "axios";
 import { BASE_URL } from "../services/dromApi";
+import { carSchema } from "../components/newCarForm/schema";
+import { redirect } from "next/navigation";
+import { Car } from "../models/drom";
 
 export async function addNewCar(formData: FormData) {
-	const carData = {
-		year: formData.get("year") as string,
-		brand: formData.get("brand") as string,
-		model: formData.get("model") as string,
-		body: formData.get("body") as string,
-		color: formData.get("color") as string,
-		price: formData.get("price") as string,
-		engine: formData.get("engine") as "gas" | "electro" | undefined,
-		transmission: formData.get("transmission") as
-			| "manual"
-			| "automatic"
-			| undefined,
-		range: formData.get("range") as string | undefined,
-		picture: formData.get("image") as File | undefined,
-	};
-
 	try {
-		const response = await axios.post(`${BASE_URL}/cars`, carData);
+		const data = {
+			year: formData.get("year"),
+			brand: formData.get("brand"),
+			model: formData.get("model"),
+			body: formData.get("body"),
+			color: formData.get("color"),
+			price: formData.get("price"),
+			engine: formData.get("engine"),
+			transmission: formData.get("transmission") ?? "",
+			range: formData.get("range") ?? "",
+		};
+		const validateData = carSchema.parse(data);
+		const response = await axios.post<Car>(
+			`${BASE_URL}/cars`,
+			validateData
+		);
+		redirect(`/cars/${response.data.id.toString()}`);
 	} catch (error) {
 		throw new Error(`Failed to create car: ${error}`);
 	}

@@ -1,9 +1,7 @@
 "use client";
 
-import { yupResolver } from "@hookform/resolvers/yup";
 import { ChangeEvent, useState } from "react";
 import styles from "./newCarForm.module.css";
-import schema from "./schema";
 import { useForm } from "react-hook-form";
 import { addNewCar } from "@/app/lib/actions";
 
@@ -11,12 +9,8 @@ const CarForm = () => {
 	const [engine, setEngine] = useState("gas");
 	const {
 		register,
-		reset,
-		handleSubmit,
 		formState: { errors },
-	} = useForm({
-		resolver: yupResolver(schema),
-	});
+	} = useForm();
 
 	const handleEngineChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		setEngine(e.target.value);
@@ -35,7 +29,6 @@ const CarForm = () => {
 					required
 					{...register("year")}
 				/>
-				{errors.year && <p>{errors.year.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="brand">Brand:</label>
@@ -45,7 +38,6 @@ const CarForm = () => {
 					required
 					{...register("brand")}
 				/>
-				{errors.brand && <p>{errors.brand.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="model">Model:</label>
@@ -55,7 +47,6 @@ const CarForm = () => {
 					required
 					{...register("model")}
 				/>
-				{errors.model && <p>{errors.model.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="body">Body:</label>
@@ -65,7 +56,6 @@ const CarForm = () => {
 					required
 					{...register("body")}
 				/>
-				{errors.body && <p>{errors.body.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="color">Color:</label>
@@ -75,7 +65,6 @@ const CarForm = () => {
 					required
 					{...register("color")}
 				/>
-				{errors.color && <p>{errors.color.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="price">Price:</label>
@@ -85,7 +74,6 @@ const CarForm = () => {
 					required
 					{...register("price")}
 				/>
-				{errors.price && <p>{errors.price.message}</p>}
 			</div>
 			<div className={styles.form_field}>
 				<label htmlFor="engine">Engine:</label>
@@ -98,7 +86,6 @@ const CarForm = () => {
 					<option value="gas">Gas</option>
 					<option value="electro">Electro</option>
 				</select>
-				{errors.engine && <p>{errors.engine.message}</p>}
 			</div>
 			{engine === "gas" && (
 				<div className={styles.form_field}>
@@ -111,9 +98,6 @@ const CarForm = () => {
 						<option value="manual">Manual</option>
 						<option value="automatic">Automatic</option>
 					</select>
-					{errors.transmission && (
-						<p>{errors.transmission.message}</p>
-					)}
 				</div>
 			)}
 			{engine === "electro" && (
@@ -125,7 +109,6 @@ const CarForm = () => {
 						id="range"
 						{...register("range")}
 					/>
-					{errors.range && <p>{errors.range.message}</p>}
 				</div>
 			)}
 			<div className={styles.form_field}>
