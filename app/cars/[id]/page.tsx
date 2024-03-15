@@ -27,12 +27,6 @@ export default async function CarPage({ params }: { params: { id: string } }) {
 					/>
 				)}
 			</div>
-			<Link
-				href="/cars"
-				className={styles.carPage_arrow}
-			>
-				<ArrowBigLeft size={100} />
-			</Link>
 
 			<div className={styles.carCard_info}>
 				<p>brand: {car.brand}</p>

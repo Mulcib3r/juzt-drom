@@ -2,8 +2,9 @@
 import axios from "axios";
 import { BASE_URL } from "../services/dromApi";
 import { carSchema } from "../components/newCarForm/schema";
-import { redirect } from "next/navigation";
 import { Car } from "../models/drom";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function addNewCar(formData: FormData) {
 	try {
@@ -17,14 +18,16 @@ export async function addNewCar(formData: FormData) {
 			engine: formData.get("engine"),
 			transmission: formData.get("transmission") ?? "",
 			range: formData.get("range") ?? "",
+			picture: "",
 		};
 		const validateData = carSchema.parse(data);
 		const response = await axios.post<Car>(
 			`${BASE_URL}/cars`,
 			validateData
 		);
-		redirect(`/cars/${response.data.id.toString()}`);
 	} catch (error) {
 		throw new Error(`Failed to create car: ${error}`);
 	}
+	revalidatePath("/cars");
+	redirect("/cars/");
 }

@@ -7,10 +7,7 @@ import { addNewCar } from "@/app/lib/actions";
 
 const CarForm = () => {
 	const [engine, setEngine] = useState("gas");
-	const {
-		register,
-		formState: { errors },
-	} = useForm();
+	const { register } = useForm();
 
 	const handleEngineChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		setEngine(e.target.value);
@@ -116,7 +113,6 @@ const CarForm = () => {
 				<input
 					type="file"
 					id="picture"
-					{...register("picture")}
 				/>
 			</div>
 			<button
