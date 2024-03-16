@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Car } from "../models/drom";
 import { unstable_noStore as noStore } from "next/cache";
-export const BASE_URL = "https://juzt-drom-back-production.up.railway.app/";
+export const BASE_URL = "https://juzt-drom-back-production.up.railway.app";
 
 export async function getCars(page: number, query: string, sort: string) {
 	noStore();
