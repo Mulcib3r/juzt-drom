@@ -28,6 +28,6 @@ export async function addNewCar(formData: FormData) {
 	} catch (error) {
 		throw new Error(`Failed to create car: ${error}`);
 	}
-	revalidatePath("/cars");
-	redirect(`/cars/`);
+	revalidatePath(`${BASE_URL}/cars`);
+	redirect(`${BASE_URL}/cars`);
 }
