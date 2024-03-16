@@ -23,6 +23,7 @@ const CarForm = () => {
 					id="year"
 					required
 					name="year"
+					maxLength={10}
 					placeholder="[0-9]"
 				/>
 			</div>
@@ -33,6 +34,7 @@ const CarForm = () => {
 					id="brand"
 					required
 					name="brand"
+					maxLength={10}
 					placeholder="[any]"
 				/>
 			</div>
@@ -43,6 +45,7 @@ const CarForm = () => {
 					id="model"
 					required
 					name="model"
+					maxLength={10}
 					placeholder="[any]"
 				/>
 			</div>
@@ -53,6 +56,7 @@ const CarForm = () => {
 					id="body"
 					required
 					name="body"
+					maxLength={10}
 					placeholder="[A-z]"
 				/>
 			</div>
@@ -63,6 +67,7 @@ const CarForm = () => {
 					id="color"
 					required
 					name="color"
+					maxLength={10}
 					placeholder="[A-z]"
 				/>
 			</div>
@@ -73,6 +78,7 @@ const CarForm = () => {
 					id="price"
 					required
 					name="price"
+					maxLength={12}
 					placeholder="[0-9]"
 				/>
 			</div>
@@ -109,6 +115,7 @@ const CarForm = () => {
 						type="text"
 						id="range"
 						name="range"
+						maxLength={7}
 						placeholder="[A-z]"
 					/>
 				</div>
