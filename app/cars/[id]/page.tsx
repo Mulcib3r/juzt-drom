@@ -1,11 +1,21 @@
 import { getCarById } from "@/app/services/dromApi";
-import styles from "./page.module.css";
-
 import Image from "next/image";
-import { ArrowBigDown, ArrowBigLeft } from "lucide-react";
-import Link from "next/link";
+import styles from "./page.module.css";
+import { Metadata } from "next";
 
-export default async function CarPage({ params }: { params: { id: string } }) {
+type Props = {
+	params: { id: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const response = await getCarById(params.id);
+	const metaName = response.brand;
+	return {
+		title: ` ${metaName} | Juzt Drom`,
+	};
+}
+
+export default async function CarPage({ params }: Props) {
 	const car = await getCarById(params.id);
 
 	return (
