@@ -23,6 +23,7 @@ const CarForm = () => {
 					id="year"
 					required
 					name="year"
+					placeholder="[0-9]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -32,6 +33,7 @@ const CarForm = () => {
 					id="brand"
 					required
 					name="brand"
+					placeholder="[any]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -41,6 +43,7 @@ const CarForm = () => {
 					id="model"
 					required
 					name="model"
+					placeholder="[any]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -50,6 +53,7 @@ const CarForm = () => {
 					id="body"
 					required
 					name="body"
+					placeholder="[A-z]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -59,6 +63,7 @@ const CarForm = () => {
 					id="color"
 					required
 					name="color"
+					placeholder="[A-z]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -68,6 +73,7 @@ const CarForm = () => {
 					id="price"
 					required
 					name="price"
+					placeholder="[0-9]"
 				/>
 			</div>
 			<div className={styles.form_field}>
@@ -103,6 +109,7 @@ const CarForm = () => {
 						type="text"
 						id="range"
 						name="range"
+						placeholder="[A-z]"
 					/>
 				</div>
 			)}

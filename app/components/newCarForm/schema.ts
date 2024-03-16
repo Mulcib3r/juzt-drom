@@ -2,9 +2,9 @@ import { z } from "zod";
 
 export const carSchema = z.object({
 	year: z.string().regex(/^\d+$/),
-	brand: z.string().regex(/^[A-Za-z]+$/),
+	brand: z.string(),
 	model: z.string(),
-	body: z.string().regex(/^[A-Za-z]+$/),
+	body: z.string(),
 	color: z.string().regex(/^[A-Za-z]+$/),
 	price: z.string().regex(/^\d+$/),
 	engine: z.string(),
