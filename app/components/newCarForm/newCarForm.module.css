@@ -31,3 +31,11 @@
 .form_submit:hover {
 	outline: none;
 }
+@media (max-width: 1320px) {
+	.form_field input {
+		width: 65%;
+	}
+	.form {
+		width: 100%;
+	}
+}

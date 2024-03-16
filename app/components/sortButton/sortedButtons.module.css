@@ -19,3 +19,12 @@
 .cars_filterDown:hover {
 	scale: 1.05;
 }
+
+@media (max-width: 1320px) {
+	.cars_filterUp {
+		scale: 0.5;
+	}
+	.cars_filterDown {
+		scale: 0.5;
+	}
+}
