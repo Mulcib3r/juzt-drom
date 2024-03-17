@@ -31,3 +31,13 @@
 	background-color: gainsboro;
 	animation: pulse 1s infinite;
 }
+
+@media (max-width: 1320px) {
+	.carPage {
+		gap: 0rem;
+
+		padding: 2rem;
+		padding-left: 0rem;
+		font-size: 1rem;
+	}
+}
