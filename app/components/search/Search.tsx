@@ -12,7 +12,8 @@ export default function Search() {
 		const params = new URLSearchParams(searchParams);
 		params.set("page", "1");
 		if (draft) {
-			params.set("query", draft);
+			const draftWithoutSpaces = draft.replace(/\s/g, "");
+			params.set("query", draftWithoutSpaces);
 		} else {
 			params.delete("query");
 		}
