@@ -2,8 +2,8 @@ import Pagination from "../components/pagination/Pagination";
 import { getTotalPages } from "../services/dromApi";
 import styles from "./page.module.css";
 import Search from "../components/search/Search";
-import CarsServerWrapper from "../components/carsServerWrapper/CarsWrapper";
 import { Metadata } from "next";
+import Cars from "../components/cars/Cars";
 
 type Props = {
 	searchParams?: { page?: string; query?: string; sort?: string };
@@ -22,7 +22,7 @@ export default async function CarsPage({ searchParams }: Props) {
 	return (
 		<div className={styles.carsPage}>
 			<Search />
-			<CarsServerWrapper
+			<Cars
 				sort={sort}
 				query={query}
 				currentPage={currentPage}
