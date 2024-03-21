@@ -1,0 +1,42 @@
+.form {
+	width: 35%;
+	background-color: gainsboro;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	gap: 1.5rem;
+	font-size: 22px;
+	padding: 2rem 1rem;
+	border-radius: 1rem;
+}
+.form_field {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.form_field input {
+	border-radius: 0.2rem;
+	border: none;
+	font-size: 22px;
+	padding: 0.2rem 1rem;
+}
+.form_submit {
+	border-radius: 1rem;
+	border: none;
+	padding: 0.5rem 0;
+	font-size: 20px;
+	cursor: pointer;
+}
+.form_submit:hover {
+	outline: none;
+	scale: 1.01;
+}
+@media (max-width: 1320px) {
+	.form_field input {
+		width: 65%;
+	}
+	.form {
+		width: 100%;
+	}
+}
