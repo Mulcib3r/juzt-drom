@@ -3,14 +3,22 @@
 import { ChangeEvent, useState } from "react";
 import styles from "./newCarForm.module.css";
 import { addNewCar } from "@/app/lib/actions";
+import clsx from "clsx";
 
 const CarForm = () => {
+	const [isLoading, setLoading] = useState(false);
 	const [engine, setEngine] = useState("gas");
-
 	const handleEngineChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		setEngine(e.target.value);
 	};
 
+	const readyChange = () => {
+		setLoading(true);
+	};
+
+	const submitButtonClass = clsx(styles.form_submit, {
+		[styles.active]: isLoading,
+	});
 	return (
 		<form
 			className={styles.form}
@@ -128,8 +136,9 @@ const CarForm = () => {
 				/>
 			</div>
 			<button
-				className={styles.form_submit}
+				className={submitButtonClass}
 				type="submit"
+				onClick={readyChange}
 			>
 				add car
 			</button>

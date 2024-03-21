@@ -27,9 +27,16 @@
 	font-size: 28px;
 	cursor: pointer;
 }
-
+.form_submit.active {
+	border-radius: 1rem;
+	border: none;
+	font-size: 28px;
+	pointer-events: none;
+	cursor: none;
+}
 .form_submit:hover {
 	outline: none;
+	scale: 1.01;
 }
 @media (max-width: 1320px) {
 	.form_field input {
